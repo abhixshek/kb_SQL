@@ -8,14 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7646177b22782920",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
             "id": "1baeb3a2a309515a",
             "type": "leaf",
             "state": {
@@ -40,7 +32,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -169,13 +161,14 @@
   },
   "active": "3c83f4e949eb856a",
   "lastOpenFiles": [
+    "Attachments/Pasted image 20230929231807.png",
+    "Data Analyst with SQL.md",
+    "Introduction to SQL.md",
     "Attachments/Pasted image 20230929105513.png",
     "Attachments/Pasted image 20230928001156.png",
     "Attachments",
     "Attachments/Pasted image 20230927233034.png",
     "Attachments/Pasted image 20230927232535.png",
-    "Data Analyst with SQL.md",
-    "Introduction to SQL.md",
     "code/learning_sql.docx",
     "code"
   ]

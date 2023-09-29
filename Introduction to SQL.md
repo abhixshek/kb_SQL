@@ -82,6 +82,13 @@ SELECT DISTINCT dept_id, year_hired
 FROM employees;
 ````
 
+`LIMIT` is used to limit the result set to a certain no. of records
+````SQL
+SELECT DISTINCT name
+FROM employees
+LIMIT 10;
+````
+
 **SQL VIEWS:**
 In SQL, a view refers to a table that is the result of a saved SQL SELECT statement. Views are considered virtual tables, which means that the data a view contains is not generally stored in the database. Rather, it is the query code that is stored for future use. **A benefit of this is that whenever the view is accessed, it automatically updates the query results to account for any updates to the underlying database.**
 
@@ -95,5 +102,23 @@ FROM employees;
 --to query the view, treat it like you would a table
 SELECT id, name
 FROM employees_hired;
+````
+
+---
+SQL has a few different versions, or flavors. Some are free, while others have customer support and are made to complement major databases such as Microsoft's SQL Server or Oracle Database, which are used by many companies. All SQL flavors are used with table-based relational databases like the ones we've seen, and the vast majority of keywords are shared between them.
+
+![[Pasted image 20230929231807.png]]
+
+````postgreSQL
+-- postgreSQL
+SELECT id, name
+FROM employees
+LIMIT 2;
+````
+
+````T-SQL
+-- T-SQL
+SELECT TOP(2) id, name
+FROM employees;
 ````
 
