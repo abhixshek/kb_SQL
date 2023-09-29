@@ -45,3 +45,55 @@ A schema also lets the reader know what data type each field can hold. The schem
 
 Finally, let's discuss storage. **The information we find in a database table is physically stored on the hard disk of a server.** Servers are centralized computers that perform services via requests made over a network. In our case, the service performed is data access, but servers are also used to access websites or files stored on the server. Any computer can be a server if it is set up to provide a service, even a laptop! However, servers are generally very powerful and large machines, because they are best equipped to handle a high volume of requests and data.
 
+---
+The two most common keywords in SQL are `SELECT` and `FROM`
+It is recommended to capitalize keywords in a query while table names and field names are all small case. 
+It is also recommended to end a query with a semicolon ; to indicate that the query is complete. 
+
+The output of the query is called **query results** or **result set**.
+````SQL
+SELECT name
+FROM patrons;
+
+-- Select separate multiple field names by a comma
+SELECT care_num, name
+FROM patrons;
+
+-- To select all columns of a table, use *
+SELECT *
+FROM patrons;
+````
+
+`AS` is used to give aliases to field names or table names
+```SQL
+SELECT name AS first_name
+FROM patrons;
+```
+
+`DISTINCT` is used to return unique values of a field or a combination of fields. 
+![[Pasted image 20230929105513.png]]
+
+````SQL
+SELECT DISTINCT year_hired
+FROM employees;
+
+--to find what are the unique year_hired for each department
+SELECT DISTINCT dept_id, year_hired
+FROM employees;
+````
+
+**SQL VIEWS:**
+In SQL, a view refers to a table that is the result of a saved SQL SELECT statement. Views are considered virtual tables, which means that the data a view contains is not generally stored in the database. Rather, it is the query code that is stored for future use. **A benefit of this is that whenever the view is accessed, it automatically updates the query results to account for any updates to the underlying database.**
+
+To create a view, 
+`CREATE VIEW name_of_the_view AS SELECT_statement; `
+````SQL
+CREATE VIEW employees_hired AS
+SELECT id, name, year_hired
+FROM employees;
+
+--to query the view, treat it like you would a table
+SELECT id, name
+FROM employees_hired;
+````
+
