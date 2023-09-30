@@ -62,12 +62,26 @@ FROM films;
 ````
 
 
+**Filtering / WHERE clause:**
+`WHERE` clause is used to filter the results to answer your business question. 
 
+Some commonly used comparison operators in a WHERE clause are:
+`=,<=, >=, <, >, <> (not equal to)`
 
+Order of execution for a query like below would be:
+````SQL
+SELECT item
+FROM closet
+WHERE color = 'green'
+LIMIT 5;
+````
 
-
-
-
+```
+1. FROM
+2. WHERE
+3. SELECT
+4. LIMIT
+```
 
 
 
