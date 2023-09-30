@@ -38,7 +38,7 @@ FROM people;
 -- 8397
 ````
 
-Use `DISTINCT` in `COUNT()`to count distinct values only. 
+Use `COUNT(DISTINCT field_name)` to count distinct values in the field only. 
 ````SQL
 SELECT COUNT(DISTINCT birthdate) AS count_distinct_birthdates
 FROM people;
@@ -46,8 +46,20 @@ FROM people;
 -- 5398
 ````
 
+**Order of execution in SQL:**
+Before SQL can fetch any data, it needs to know where to fetch it `FROM`. 
+then our `SELECT`ion is made. and then further refinements like `LIMIT`
 
+**SQL formatting:**
+New lines, indentation, capitalization are NOT REQUIRED in SQL. 
+Semicolon ; is also NOT REQUIRED in PostgreSQL. However, including a ; at the end of the query is considered best practice because 1. some SQL flavors require it, therefore it is better to get into a habit of adding it, 2. if your file contains multiple queries, semicolon ; helps identify the end of each of your queries. 
 
+**NOTE:** It is possible to create field name with a space in it, ex: `release year`
+This is a non-standard way of naming fields but in case you come across such a field name given by someone else in your team, you will have to include it in double quotes when querying it in order for SQL to treat it as a single entity rather than two. ex:
+````SQL
+SELECT "release year"
+FROM films;
+````
 
 
 
