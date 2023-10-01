@@ -227,6 +227,9 @@ SELECT ROUND(AVG(budget), 0) AS avg_budget
 FROM films
 WHERE release_year >= 2010;
 -- 41072235
+
+SELECT title, ROUND(duration / 60.0, 2) AS duration_hours
+FROM films;
 ````
 
 NOTE: 
@@ -237,3 +240,41 @@ FROM films
 WHERE release_year >= 2010;
 -- 41100000
 ````
+
+-1 means rounding to the nearest tens
+-2 means rounding to the nearest hundreds, etc
+
+**Arithmetic operations:**
+`+, -, *, /`
+
+````SQL
+SELECT (4 + 3);
+-- 7
+SELECT (4 - 3);
+-- 1
+SELECT (4 * 3);
+-- 12
+SELECT (4 / 3);
+-- 1
+-- INT divided by INT gives an INT
+
+SELECT (4.0 / 3.0);
+-- 1.333...
+
+````
+
+````SQL
+SELECT (gross - budget) AS profit
+FROM films;
+````
+
+**Order of execution:**
+1. `FROM`
+2. `WHERE`
+3. `SELECT` (aliases are defined here)
+4. `LIMIT`
+
+because `SELECT` happens after `WHERE` clause you cannot use the alias in the WHERE clause.
+example below query gives an error:
+`SELECT budget as movie_budget FROM films WHERE movie_budget > 1000;`
+
