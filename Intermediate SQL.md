@@ -164,7 +164,6 @@ In SQL, NULL represents a missing or unknown value. Why is this useful? In the r
 SELECT COUNT(*) AS no_birthdates
 FROM people
 WHERE birthdate IS NULL;
-
 -- 2245
 
 -- count of how many records have a birthdate value
@@ -173,3 +172,68 @@ FROM people
 WHERE birthdate IS NOT NULL;
 ````
 
+---
+**Aggregate functions:** 
+- return a single value
+`AVG(), SUM(), MIN(), MAX(), COUNT()`
+````SQL
+SELECT AVG(budget) AS avg_budget
+FROM films;
+--41072235.18324507
+
+SELECT SUM(budget) AS total_budget
+FROM films;
+
+SELECT MIN(budget) AS min_budget
+FROM films;
+
+SELECT MAX(budget) AS max_budget
+FROM films;
+````
+
+**NOTE:** `AVG() `and` SUM()` can only be used with numerical fields. While `COUNT(), MIN(), MAX()` can be used with other some of the other data types as well. 
+
+```
+MIN()                 <-> MAX()
+
+--in numeric values
+Minimum numeric value <-> Maximum numeric value
+
+-- in strings
+A                     <-> Z
+
+-- in dates
+2010-05-24            <-> 2023-03-28
+```
+
+Use `ROUND()` to limit the no. of decimal places:
+````SQL
+SELECT ROUND(AVG(budget), 2) AS avg_budget
+FROM films
+WHERE release_year >= 2010;
+--41072235.18
+````
+
+NOTE: 
+The 2nd argument to ROUND() is optional, when its not passed, the answer is rounded to the nearest whole number. 
+````SQL
+SELECT ROUND(AVG(budget)) AS avg_budget
+FROM films
+WHERE release_year >= 2010;
+-- 41072235
+
+-- passing 0 as the 2nd argument gives the same result as above
+SELECT ROUND(AVG(budget), 0) AS avg_budget
+FROM films
+WHERE release_year >= 2010;
+-- 41072235
+````
+
+NOTE: 
+passing a negative value as the 2nd argument rounds digits to the left of the decimal point. 
+````SQL
+SELECT ROUND(AVG(budget), -5) AS avg_budget
+FROM films
+WHERE release_year >= 2010;
+-- 41100000
+````
