@@ -83,7 +83,46 @@ LIMIT 5;
 4. LIMIT
 ```
 
+3 important operators used in a `WHERE` clause:
+`OR, AND, BETWEEN`
+````SQL
+-- OR: returns rows where atleast one of the criteria is satisfied 
+SELECT title
+FROM films
+WHERE release_year = 2014
+  OR release_year = 2020;
+  
+-- AND: returns rows where both the criteria are satisfied
+SELECT title
+FROM films
+WHERE release_year > 1994
+AND release_year < 2000;
 
+-- when combining OR, AND conditions, it may be required to enclose individual conditions in parenthesis for semantics 
+SELECT title
+FROM films
+WHERE (release_year = 1994 OR release_year = 1995)
+  AND (certification = 'PG' OR certification = 'R');
+
+-- BETWEEN provides an alternative to a long AND condition
+SELECT title
+FROM films
+WHERE release_year
+  BETWEEN 1994 AND 2000;
+
+
+````
+
+**NOTE:** `BETWEEN` is inclusive. So the results contain films including 1994 and 2000
+![[Pasted image 20231001002951.png]]
+
+````SQL
+-- films released between 1994 and 2000 and their country is UK
+SELECT title
+FROM films
+WHERE release_year
+  BETWEEN 1994 AND 2000 AND country = 'UK';
+````
 
 
 
