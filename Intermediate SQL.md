@@ -329,3 +329,53 @@ ORDER BY release_year, gross DESC;
 4. `ORDER BY`
 5. `LIMIT`
 
+
+**GROUPING:**
+`GROUP BY`
+- find summary statistics for each group of data.
+````SQL
+SELECT release_year, COUNT(title) AS total_titles
+FROM films
+GROUP BY release_year;
+
+SELECT release_year, language, COUNT(title) AS total_titles
+FROM films
+GROUP BY release_year, language;
+
+-- using ORDER BY in conjuction with GROUP BY to sort the most important information on the top
+SELECT release_year, language, COUNT(title) AS total_titles
+FROM films
+GROUP BY release_year, language
+ORDER BY total_titles DESC;
+--NOTE the alias of the SELECT clause can come in the ORDER BY clause because its after select in the order of execution
+````
+**NOTE:** the alias of the `SELECT` clause can come in the` ORDER BY` clause because its after select in the order of execution.
+
+**Order of execution:**
+1. `FROM`
+2. `GROUP BY`
+3. `SELECT`
+4. `ORDER  BY`
+5. `LIMIT`
+
+**Filtering grouped data:**
+`HAVING` clause
+In SQL, we cant filter aggregate functions with `WHERE` clauses. 
+`WHERE` filters individual records, while `HAVING` filters grouped records
+````SQL
+SELECT release_year, COUNT(title) AS total_titles
+FROM films
+GROUP BY release_year
+HAVING COUNT(title) > 10;
+````
+
+**Order of execution:**
+1. `FROM`
+2. `WHERE`
+3. `GROUP BY`
+4. `HAVING`
+5. `SELECT`
+6. `ORDER BY`
+7. `LIMIT`
+
+**NOTE:** because `HAVING` comes before `SELECT` in the order of execution you cannot use the alias `total_titles` in the `HAVING` clause.
