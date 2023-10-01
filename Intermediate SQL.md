@@ -11,7 +11,7 @@ Also notice the field names are singular.
 
 `COUNT()` 
 - counts the no. of records with a value in a field. 
-- always use an alias for `count()` for clarity
+- always use an alias for `count()` for clarity using `AS` keyword
 
 ````SQL
 SELECT COUNT(birthdate) AS count_birthdates
@@ -28,7 +28,7 @@ FROM people;
 
 **NOTE:** the count is different for each field, even though the total no. of rows would be technically same for both fields in the table. **This implies that NULL is not counted** in `COUNT()`
 
-`COUNT(*)` - counts records in a table. 
+`COUNT(*)` - counts records in a table. (essentially meaning it includes missing values too)
 `*` represents all fields. 
 
 ````SQL
@@ -125,7 +125,51 @@ WHERE release_year
 ````
 
 
+**Filtering texts based on patterns:** `LIKE , NOT LIKE`
+`LIKE` and `NOT LIKE` are case sensitive.
+
+`%` matches zero, one or more characters
+`_` (underscore) matches a single character
+
+````SQL
+-- finds people whose name ends with letter 'r'
+SELECT name
+FROM people
+WHERE name LIKE '%r';
+
+-- finds people whose name has letter 't' in the 3rd place
+SELECT name
+FROM people
+WHERE name LIKE '__t%';
+````
+
+`IN` **operator:**
+when you have multiple values to be included in a filtering operation, you can use `IN`
+````SQL
+SELECT title
+FROM films
+WHERE release_year IN (1994, 1999, 2010);
+
+SELECT title
+FROM films
+WHERE country IN ('Germany', 'France');
+````
 
 
+**NULL values:**
+In SQL, NULL represents a missing or unknown value. Why is this useful? In the real world, our databases will likely have empty fields either because of human error or because the information is not available or is unknown. Knowing how to handle these fields is essential as they can affect any analyses we do
 
+````SQL
+-- count how many records do not have a birthday value
+SELECT COUNT(*) AS no_birthdates
+FROM people
+WHERE birthdate IS NULL;
+
+-- 2245
+
+-- count of how many records have a birthdate value
+SELECT COUNT(*) AS count_birthdates
+FROM people
+WHERE birthdate IS NOT NULL;
+````
 
