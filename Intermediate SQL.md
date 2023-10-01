@@ -214,7 +214,7 @@ WHERE release_year >= 2010;
 --41072235.18
 ````
 
-NOTE: 
+**NOTE:** 
 The 2nd argument to ROUND() is optional, when its not passed, the answer is rounded to the nearest whole number. 
 ````SQL
 SELECT ROUND(AVG(budget)) AS avg_budget
@@ -232,7 +232,7 @@ SELECT title, ROUND(duration / 60.0, 2) AS duration_hours
 FROM films;
 ````
 
-NOTE: 
+**NOTE:** 
 passing a negative value as the 2nd argument rounds digits to the left of the decimal point. 
 ````SQL
 SELECT ROUND(AVG(budget), -5) AS avg_budget
@@ -277,4 +277,55 @@ FROM films;
 because `SELECT` happens after `WHERE` clause you cannot use the alias in the WHERE clause.
 example below query gives an error:
 `SELECT budget as movie_budget FROM films WHERE movie_budget > 1000;`
+
+**Sorting results:**
+`ORDER BY`
+- by default it sorts in ascending order
+
+````SQL
+SELECT title, budget
+FROM films
+ORDER BY budget;
+
+SELECT title, budget
+FROM films
+ORDER BY budget ASC;
+--same result as the first query
+
+SELECT title, budget
+FROM films
+ORDER BY budget DESC;
+--sorts in descending order
+````
+
+![[Pasted image 20231001170243.png]]
+
+NOTICE above that when sorting by a string field, values starting with symbols or numbers come before letter A. 
+
+**NOTE:** when ordering by in descending order a field that has NULL values, then NULL values come up before the highest non-null value. 
+
+**NOTE:** the `ORDER BY` field, does not necessarily have to come in the SELECT clause. 
+ex:
+````SQL
+SELECT title
+FROM films
+ORDER BY gross DESC;
+-- notice that gross is not in the SELECT clause but is only being used for sorting the results.
+````
+
+**NOTE:** `ORDER BY` can have multiple fields to sort on.
+ex:
+````SQL
+SELECT title
+FROM films
+ORDER BY release_year, gross DESC;
+-- sorts on release_year ascending and when there is a tie in release year value, it looks at the gross field to determine which row should come first. 
+````
+
+**Order of execution:**
+1. `FROM`
+2. `WHERE`
+3. `SELECT`
+4. `ORDER BY`
+5. `LIMIT`
 
