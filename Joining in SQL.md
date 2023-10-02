@@ -4,7 +4,8 @@
 
 ![[Pasted image 20231002133229.png]]
 
-When same column name appears in the two tables being joined, make sure to write  `table_name.column_name` to avoid SQL errors. 
+When same column name appears in the two tables being joined, make sure to write  `table_name.column_name` to avoid SQL errors.
+
 ````SQL
 -- show countries having both a prime minister and a president
 SELECT p1.country, p1.continent, prime_minister, president
@@ -21,4 +22,5 @@ INNER JOIN presidents AS p2
 USING(country);
 ````
 
+**NOTE:** A parting word of caution when using `USING`: columns can sometimes have the same name but actually contain vastly different data. Always remember to check what you are joining on by displaying and viewing your data first!
 
