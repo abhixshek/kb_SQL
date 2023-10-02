@@ -56,3 +56,38 @@ INNER JOIN economies AS e
 ON c.code = e.code AND p.year = e.year;
 ````
 
+
+**Outer Joins:**
+Outer joins can obtain records from other tables, even if matches are not found for the field being joined on.
+
+`LEFT JOIN`:
+A LEFT JOIN will return all records in the left_table, and those records in the right_table that match on the joining field provided.
+![[Pasted image 20231002221312.png]]
+
+````SQL
+SELECT p1.country, prime_minister, president
+FROM prime_ministers AS p1
+LEFT JOIN presidents AS p2
+USING(country);
+````
+**NOTE:**` LEFT JOIN` can also be written as `LEFT OUTER JOIN`
+
+**NOTE:** In SQL, the 2 most common type of joins are `INNER JOIN` and `LEFT JOIN`.
+
+`RIGHT JOIN`:
+![[Pasted image 20231002221826.png]]
+
+````SQL
+SELECT p1.country, prime_minister, president
+FROM prime_ministers AS p1
+RIGHT JOIN presidents AS p2
+USING(country);
+````
+
+**NOTE:**  The order of the left and right tables will remain the same even in a `RIGHT JOIN`.
+
+**NOTE:**` RIGHT JOIN` can also be written as `RIGHT OUTER JOIN`
+
+The reason `RIGHT JOIN` is used less often, is because they can always be rewritten as a `LEFT JOIN` and secondly, users feel it intuitive writing from left to right, therefore are more comfortable with a `LEFT JOIN`. 
+
+
