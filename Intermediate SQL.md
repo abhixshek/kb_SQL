@@ -379,3 +379,4 @@ HAVING COUNT(title) > 10;
 7. `LIMIT`
 
 **NOTE:** because `HAVING` comes before `SELECT` in the order of execution you cannot use the alias `total_titles` in the `HAVING` clause.
+

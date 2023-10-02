@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "cf0d5fddbccf0cea",
+    "type": "split",
+    "children": [
+      {
+        "id": "c717be4651e621dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2abb23aeb5d9889f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Intermediate SQL.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "50b825c309df138f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Joining in SQL.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "63d059bf5994a7f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "2c58c1b14b0d86e1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "187d0dea69af6d35",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "abbb8c04cd0bc333",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b6ccdda3b091657b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ca2c80400df2d03f",
+    "type": "split",
+    "children": [
+      {
+        "id": "fe3caf9fb74a420f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "70b8befed2e29f0e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Joining in SQL.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "511d61748aeb552c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Joining in SQL.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "193b744a0db3d233",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9f53eb29a50f8e6b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Joining in SQL.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "50b825c309df138f",
+  "lastOpenFiles": [
+    "Attachments/Pasted image 20231002133229.png",
+    "Attachments/Pasted image 20231002133216.png",
+    "Intermediate SQL.md",
+    "Joining in SQL.md",
+    "Unconfirmed 696819.crdownload",
+    "Data Analyst with SQL.md",
+    "PostgreSQL.md",
+    "Introduction to SQL.md"
+  ]
+}
