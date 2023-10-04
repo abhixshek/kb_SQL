@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2abb23aeb5d9889f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Intermediate SQL.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "50b825c309df138f",
             "type": "leaf",
             "state": {
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,15 +148,16 @@
   },
   "active": "50b825c309df138f",
   "lastOpenFiles": [
+    "Attachments/Pasted image 20231004224643.png",
+    "Intermediate SQL.md",
+    "Joining in SQL.md",
     "Attachments/Pasted image 20231002221826.png",
     "Attachments/Pasted image 20231002221312.png",
     "Attachments/Pasted image 20231002152546.png",
     "Attachments/Pasted image 20231002151306.png",
-    "Joining in SQL.md",
     "Attachments/Pasted image 20231002150715.png",
     "Attachments/Pasted image 20231002133229.png",
     "Attachments/Pasted image 20231002133216.png",
-    "Intermediate SQL.md",
     "Unconfirmed 696819.crdownload",
     "Data Analyst with SQL.md",
     "PostgreSQL.md",

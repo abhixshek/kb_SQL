@@ -91,3 +91,18 @@ USING(country);
 The reason `RIGHT JOIN` is used less often, is because they can always be rewritten as a `LEFT JOIN` and secondly, users feel it intuitive writing from left to right, therefore are more comfortable with a `LEFT JOIN`. 
 
 
+`FULL JOINS`
+A `FULL JOIN` combines a` LEFT JOIN` and a `RIGHT JOIN`.
+This is because the `FULL JOIN` will return all ids, irrespective of whether they have a match in the other table being joined.
+![[Pasted image 20231004224643.png]]
+
+````SQL
+SELECT left_table.id, right_table.id, left_table.column2, right_table.column2
+FROM left_table
+FULL JOIN right_table
+ON left_table.left_column_name = right_table.right_column_name;
+
+````
+
+**NOTE:**` FULL JOIN` can also be written as `FULL OUTER JOIN`
+
