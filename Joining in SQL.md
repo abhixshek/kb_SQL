@@ -140,6 +140,29 @@ ON p1.contient = p2.contient
   AND p1.country <> p2.country;
 ````
 
+---
+### Set theory for SQL Joins:
+
+We have 3 set operations in SQL, `UNION`, `INTERSECT` and `EXCEPT`. 
+
+![[Pasted image 20231007213913.png]]
+````SQL
+SELECT col1
+FROM table1
+UNION
+SELECT col2
+FROM table2;
+````
+
+**NOTE:**
+`UNION` does not include duplicates. 
+`UNION ALL` includes duplicates.
+
+**NOTE:** For all set operations, the no. of selected columns and their respective data types must be identical. 
+
+**NOTE:** The result set will contain names (aliases) of selected columns from the first table. That is, it does not matter what the column names you give in the subsequent tables after the set operation keyword(ex `UNION`), the result set will contain column names as in the first table's query.
+
+
 
 
 
