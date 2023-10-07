@@ -106,3 +106,41 @@ ON left_table.left_column_name = right_table.right_column_name;
 
 **NOTE:**` FULL JOIN` can also be written as `FULL OUTER JOIN`
 
+
+**Cross Joins:**
+- used when you are interested in all possible combinations between two sets of data. 
+![[Pasted image 20231004232543.png]]
+````SQL
+SELECT id1, id2
+FROM table1
+CROSS JOIN table2;
+````
+**NOTE:** we do not specify `ON` keyword in a `CROSS JOIN`.
+
+![[Pasted image 20231004232815.png]]
+
+
+**SELF JOINS:**
+- self joins are tables joined with themselves
+- they can be used to compare parts of the same table. 
+
+**NOTE:**
+1. There is no keywords in SQL for self join. 
+2. Aliasing is MUST in a self join. 
+
+````SQL
+-- Countries within the same continent are to have bilateral meetings along themselves. Write a SQL query to return the result. 
+SELECT
+  p1.country AS country1,
+  p2.country AS country2,
+  p1.continent
+FROM prime_ministers AS p1
+INNER JOIN prime_ministers AS p2
+ON p1.contient = p2.contient
+  AND p1.country <> p2.country;
+````
+
+
+
+
+

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c717be4651e621dc",
+        "id": "e7ac6e80fec802f9",
         "type": "tabs",
         "children": [
           {
-            "id": "50b825c309df138f",
+            "id": "1af6d5847bf3ab1b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,11 +146,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "50b825c309df138f",
+  "active": "1af6d5847bf3ab1b",
   "lastOpenFiles": [
-    "Attachments/Pasted image 20231004224643.png",
+    "Attachments/Pasted image 20231004232815.png",
+    "Attachments/Pasted image 20231004232543.png",
     "Intermediate SQL.md",
+    "Introduction to SQL.md",
     "Joining in SQL.md",
+    "Attachments/Pasted image 20231004224643.png",
     "Attachments/Pasted image 20231002221826.png",
     "Attachments/Pasted image 20231002221312.png",
     "Attachments/Pasted image 20231002152546.png",
@@ -160,7 +163,6 @@
     "Attachments/Pasted image 20231002133216.png",
     "Unconfirmed 696819.crdownload",
     "Data Analyst with SQL.md",
-    "PostgreSQL.md",
-    "Introduction to SQL.md"
+    "PostgreSQL.md"
   ]
 }
