@@ -162,6 +162,72 @@ FROM table2;
 
 **NOTE:** The result set will contain names (aliases) of selected columns from the first table. That is, it does not matter what the column names you give in the subsequent tables after the set operation keyword(ex `UNION`), the result set will contain column names as in the first table's query.
 
+**INTERSECT:**
+````SQL
+SELECT col1
+FROM table1
+INTERSECT
+SELECT col2
+FROM table2;
+````
+
+#### Q. What is the difference between INTERSECT and INNER JOIN ?
+![[Pasted image 20231007230242.png]]
+NOTICE how INNER JOIN returns all rows satisfying the condition, but INTERSECT only returns 1 record.  
+
+**EXCEPT:**
+![[Pasted image 20231007233309.png]]
+
+````SQL
+SELECT col1
+FROM table1
+EXCEPT
+SELECT col2
+FROM table2;
+
+--A EXCEPT B is essentially A - B
+````
+
+**Semi-joins:**
+- uses WHERE clause to filter data in 1 table using data in another table.
+````SQL
+-- find presidents whose country gained independence before 1800
+SELECT president, country, continent
+FROM presidents
+WHERE country IN
+  (SELECT country
+   FROM states
+   WHERE indep_year < 1800);
+
+-- the query in parenthesis is called a sub-query
+````
+
+**Anti-joins:**
+````SQL
+-- find presidents whose country did not gain independence before 1800
+SELECT president, country, continent
+FROM presidents
+WHERE country NOT IN
+  (SELECT country
+   FROM states
+   WHERE indep_year < 1800);
+````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
