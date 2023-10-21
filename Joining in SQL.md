@@ -203,6 +203,7 @@ WHERE country IN
 ````
 
 **Anti-joins:**
+- uses WHERE clause to filter data in 1 table using data in another table.
 ````SQL
 -- find presidents whose country did not gain independence before 1800
 SELECT president, country, continent
@@ -214,10 +215,36 @@ WHERE country NOT IN
 ````
 
 **NOTE:** The datatype of the result of the sub-query should match the data type of the column used in the WHERE clause of the main table.
+**NOTE:** the table used in a sub-query can be the same table as the main query or a different table(usually).
 
+**Sub-queries inside SELECT:**
+````SQL
+-- count the number of monarchs listed in the monarchs table for each continent in the states table.
+SELECT DISTINCT continent, 
+    (SELECT COUNT(*) 
+     FROM monarchs
+     WHERE states.continent = monarchs.continent) AS monarch_count
+FROM states;
+````
 
+**Sub-queries inside FROM:**
+- uses 2 tables in the `FROM` clause
+````SQL
+SELECT *
+FROM left_table, right_table
+WHERE left_table.key = right_table.key
+````
 
+````SQL
+-- query to return all continents with monarchs and the year the most recent country got independence. 
 
+SELECT DISTINCT monarchs.continent, sub.most_recent
+FROM monarchs,
+  (SELECT continent, MAX(indep_year) AS most_recent
+   FROM states
+   GROUP BY continent) AS sub
+WHERE monarchs.continent = sub.continent
+````
 
 
 

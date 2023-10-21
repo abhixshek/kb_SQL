@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "table name",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -146,17 +147,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1af6d5847bf3ab1b",
+  "active": "abbb8c04cd0bc333",
   "lastOpenFiles": [
-    "PostgreSQL.md",
-    "Joining in SQL.md",
+    "Introduction to SQL.md",
     "Intermediate SQL.md",
+    "Joining in SQL.md",
+    "PostgreSQL.md",
     "Attachments/Pasted image 20231007233309.png",
     "Attachments/Pasted image 20231007230242.png",
     "Attachments/Pasted image 20231007213913.png",
     "Attachments/Pasted image 20231004232815.png",
     "Attachments/Pasted image 20231004232543.png",
-    "Introduction to SQL.md",
     "Attachments/Pasted image 20231004224643.png",
     "Attachments/Pasted image 20231002221826.png",
     "Attachments/Pasted image 20231002221312.png",
