@@ -213,6 +213,8 @@ WHERE country NOT IN
    WHERE indep_year < 1800);
 ````
 
+**NOTE:** The datatype of the result of the sub-query should match the data type of the column used in the WHERE clause of the main table.
+
 
 
 
